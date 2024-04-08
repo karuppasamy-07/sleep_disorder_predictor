@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        p {
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .tips-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.8); /* Background with transparency */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .tip {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Prediction Result</h1>
+    <p>Predicted Sleep Disorder: {{ predicted_label }}</p>
+    {% if predicted_label == "Insomnia" %}
+    <div class="tips-container">
+        <h2>Treatment for Insomnia:</h2>
+        <div class="tip">
+            <p>1. Maintain a consistent sleep schedule.</p>
+            <p>2. Create a relaxing bedtime routine.</p>
+            <p>3. Limit exposure to screens before bedtime.</p>
+            <p>4. Avoid caffeine and heavy meals before bedtime.</p>
+            <p>5. Ensure your sleep environment is comfortable and conducive to sleep.</p>
+        </div>
+        
+    </div>
+    {% elif predicted_label == "Sleep Apnea" %}
+    <div class="tips-container">
+        <h2>Treatment for Sleep Apnea:</h2>
+        <div class="tip">
+            <p>1. Maintain a healthy weight.</p>
+            <p>2. Sleep on your side instead of your back.</p>
+            <p>3. Avoid alcohol and sedatives before bedtime.</p>
+            <p>4. Use a CPAP machine if prescribed by a healthcare professional.</p>
+            <p>5. Consider lifestyle changes to improve sleep quality.</p>
+        </div>
+        
+    </div>
+    {% endif %}
+</body>
+</html>
